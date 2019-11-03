@@ -1,3 +1,6 @@
+packaged-template.yml
+/sb-nippo-kaku-lambda-go
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
