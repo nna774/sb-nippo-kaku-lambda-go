@@ -73,17 +73,16 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	if err != nil {
 		return fail(errors.Wrap(err, "environment TZ wrong"))
 	}
-	theDay := time.Now()
+	theDay := time.Now().In(loc)
 	isToday := true
 	if input.Date != "" {
 		isToday = false
 		// with date parameter
-		theDay, err = time.Parse(YYYYMMDD, input.Date)
+		theDay, err = time.ParseInLocation(YYYYMMDD, input.Date, loc)
 		if err != nil {
 			return fail(errors.Wrap(err, fmt.Sprintf("%v is not valid time stamp", input.Date)))
 		}
 	}
-	theDay = theDay.In(loc)
 
 	redirectTo := Project + "/" + url.PathEscape(theDay.Format(YYYYMMDD))
 	if isToday {
