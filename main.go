@@ -102,11 +102,11 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 			return fail(errors.Wrap(err, "lastorder response unmarshal fail"))
 		}
 		if lo.Last != "" {
-			lattime, err := strconv.ParseInt(lo.Last, 10, 64)
+			lasttime, err := strconv.ParseInt(lo.Last, 10, 64)
 			if err != nil {
 				return fail(errors.Wrap(err, "lastorder response parseInt fail"))
 			}
-			lastDay := time.Unix(lattime, 0)
+			lastDay := time.Unix(lasttime, 0).In(loc)
 			if dateEqual(lastDay, theDay) {
 				return redirect(redirectTo)
 			}
