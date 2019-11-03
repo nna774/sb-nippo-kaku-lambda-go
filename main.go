@@ -20,11 +20,11 @@ import (
 const (
 	// YYYYMMDD is golang lunatic parse sting https://golang.org/pkg/time/#pkg-constants
 	YYYYMMDD = "2006/01/02"
+	// TZ is timezone
+	TZ = "Asia/Tokyo"
 )
 
 var (
-	// TZ is timezone
-	TZ = os.Getenv("TZ")
 	// Project is the Scrapbox project for make Nippo
 	Project = os.Getenv("PROJECT")
 	// Lastorder is the arn of lastOrder

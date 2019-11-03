@@ -12,5 +12,4 @@ Resources:
       Environment:
         Variables:
           PROJECT: https://scrapbox.io/rebuild-kitashirakawa
-          TZ: Asia/Tokyo
           lastOrder: arn:aws:lambda:ap-northeast-1:486414336274:function:lastOrder
