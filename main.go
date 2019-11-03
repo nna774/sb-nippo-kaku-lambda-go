@@ -79,7 +79,7 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 		isToday = false
 		theDay, err = time.ParseInLocation(YYYYMMDD, input.Date, loc)
 		if err != nil {
-			return fail(errors.Wrap(err, fmt.Sprintf("%v is not valid time stamp", input.Date)))
+			return fail(errors.Wrap(err, fmt.Sprintf("%v is not valid date format", input.Date)))
 		}
 	}
 
