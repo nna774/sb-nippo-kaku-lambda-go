@@ -71,7 +71,7 @@ func dateEqual(d1, d2 time.Time) bool {
 func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	loc, err := time.LoadLocation(TZ)
 	if err != nil {
-		return fail(errors.Wrap(err, "environment TZ wrong"))
+		return fail(errors.Wrap(err, "wrong TZ string"))
 	}
 	theDay := time.Now().In(loc)
 	isToday := true
