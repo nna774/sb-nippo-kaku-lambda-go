@@ -112,7 +112,10 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 			}
 		}
 	}
-	body := "元気度(0: 鬱 〜 10: 躁): \nK\nP\nT\n\n#" + Weekday[theDay.Weekday()] + " #nippo"
+	body := "元気度(0: 鬱 〜 10: 躁): \n"
+	body = body + "HP(%):\nMP(%):\n"
+	body = body + "K\nP\nT\n"
+	body = body + "\n#" + Weekday[theDay.Weekday()] + " #nippo"
 	redirectTo = redirectTo + "?body=" + url.QueryEscape(body)
 	return redirect(redirectTo)
 }
