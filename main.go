@@ -20,6 +20,8 @@ import (
 const (
 	// YYYYMMDD is golang lunatic parse sting https://golang.org/pkg/time/#pkg-constants
 	YYYYMMDD = "2006/01/02"
+	// MD is too.
+	MD = "1月2日"
 	// TZ is timezone
 	TZ = "Asia/Tokyo"
 )
@@ -116,7 +118,7 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	body = body + "HP(%): \nMP(%): \n"
 	body = body + "K\nP\nT\n"
 	body = body + "\n"
-	body = body + "#" + theDay.Format("2月1日") +"\n"
+	body = body + "#" + theDay.Format(MD) +"\n"
 	body = body + "#" + Weekday[theDay.Weekday()] + " #nippo"
 	redirectTo = redirectTo + "?body=" + url.QueryEscape(body)
 	return redirect(redirectTo)
