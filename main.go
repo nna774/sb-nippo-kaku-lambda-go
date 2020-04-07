@@ -117,9 +117,9 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	body := "元気度(0: 鬱 〜 10: 躁): \n"
 	body = body + "HP(%): \nMP(%): \n"
 
-	body = body + "よく寝た？:\n"
-	body = body + "ごはん食べてる？:\n"
-	body = body + "寒い？:\n"
+	body = body + "よく寝た？: \n"
+	body = body + "ごはん食べてる？: \n"
+	body = body + "寒い？: \n"
 
 	body = body + "K\nP\nT\n"
 
