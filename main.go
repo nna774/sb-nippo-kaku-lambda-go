@@ -24,6 +24,8 @@ const (
 	MD = "1月2日"
 	// TZ is timezone
 	TZ = "Asia/Tokyo"
+	// Day is 24 hours
+	Day = time.Hour * 24
 )
 
 var (
@@ -126,7 +128,8 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	body = body + "寒い？: \n"
 
 	body = body + "\n"
-	body = body + "#" + theDay.Format(MD) + "\n"
+	body = body + "#" + theDay.Format(MD) + " "
+	body = body + "#" + theDay.Add(-1 * Day).Format(YYYYMMDD) + " #" + theDay.Add(Day).Format(YYYYMMDD) + "\n"
 	body = body + "#" + Weekday[theDay.Weekday()] + " #nippo"
 	redirectTo = redirectTo + "?body=" + url.QueryEscape(body)
 	return redirect(redirectTo)
