@@ -120,14 +120,6 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 	body = body + "K\nP\nT\n"
 	body = body + "\n"
 
-	body = body + "元気度(0: 鬱 〜 10: 躁): \n"
-	body = body + "HP(%): \nMP(%): \n"
-
-	body = body + "よく寝た？: \n"
-	body = body + "ごはん食べてる？: \n"
-	body = body + "寒い？: \n"
-
-	body = body + "\n"
 	body = body + "#" + theDay.Format(MD) + " "
 	body = body + "#" + theDay.Add(-1 * Day).Format(YYYYMMDD) + " #" + theDay.Add(Day).Format(YYYYMMDD) + "\n"
 	body = body + "#" + Weekday[theDay.Weekday()] + " #nippo"
