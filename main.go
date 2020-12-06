@@ -117,7 +117,6 @@ func MakeNippoHandler(ctx context.Context, input Input) (Response, error) {
 		}
 	}
 	var body string
-	body = body + "K\nP\nT\n"
 	body = body + "\n"
 
 	body = body + "#" + theDay.Format(MD) + " "
