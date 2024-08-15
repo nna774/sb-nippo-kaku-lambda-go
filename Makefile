@@ -1,7 +1,7 @@
 all: app
 
 app:
-	go build
+	GOARCH=amd64 GOOS=linux go build
 
 deploy: app
 	sam package --template-file template.yml --s3-bucket nana-lambda --output-template-file packaged-template.yml
